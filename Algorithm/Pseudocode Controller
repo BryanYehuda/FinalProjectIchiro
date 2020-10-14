@@ -1,0 +1,78 @@
+int flag = 2
+int c, d
+c = a[i] 
+a = a[i-1]
+d = b[i]
+b = b[i-1]
+
+int main 
+{
+Call (Pathfinding (int a ,int b ,int i))
+For (i = 0, i<=lengthof[pathfinding], i ++)
+{
+Call (Check, a,b,i)
+Call (setposition)
+}
+}
+
+void check
+{
+if (flag = 2 && d!=b)
+{if (d>b)
+ {flag = 1
+  call (belokkiri)
+ }
+ else 
+ {flag = 3
+  call (belokkanan)
+ }
+}
+
+if (flag = 0 && d!=b)
+{if (d>b)
+ {flag = 1
+  call (belokkanan)
+ }
+ else
+ {flag = 3
+  call (belokkiri)
+ }
+}
+
+if (flag = 1 && c!=a)
+{if (c>a)
+ {flag = 2
+  call (belokkanan)
+ }
+ else
+ {flag = 0
+  call (belokkiri)
+ }
+}
+
+if (flag = 3 && c!=a)
+{if (c>a)
+ {flag = 2
+  call (belokkiri)
+ }
+ else
+ {flag = 0
+  call (belokkanan)
+ }
+}
+
+void belokkanan
+{rightmotor (-1)
+ leftmotor (+1)
+}
+
+void belokkiri
+{rightmotor (+1)
+ leftmotor (-1)
+}
+}
+
+void setposition //sesuai dengan tutorial 1 referensinya
+{rightmotor (+0.4)
+ leftmotor (+0.4)
+}

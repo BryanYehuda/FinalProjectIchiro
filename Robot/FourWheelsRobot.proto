@@ -1,0 +1,286 @@
+PROTO FourWheelsRobot [
+  field SFVec3f    translation  0 0 0
+  field SFRotation rotation     0 1 0 0
+  field SFFloat    bodyMass     1
+]
+
+Robot {
+  translation -0.0999978 0.0496797 -1.70996
+  rotation 4.18290705208922e-06 0.9999999112579117 0.0004212679339480081 -3.141585304268881
+  children [
+    Compass {
+    }
+    TinkerbotsBase {
+      translation -2.65355e-08 0.035 0.03
+      rotation 0 1 0 3.14159
+      controller "grab_fteinew"
+      upSlot TinkerbotsDistanceSensor {
+        upSlot TinkerbotsPivot {
+          slot TinkerbotsGrabber {
+            fingerASlot TinkerbotsFinger {
+            }
+            fingerBSlot TinkerbotsFinger {
+            }
+            fingerCSlot TinkerbotsFinger {
+            }
+          }
+        }
+      }
+    }
+    Camera {
+      translation -3e-08 0.035 -0.105
+      rotation 0.1565580220880684 -0.912487128738712 0.37796405332525124 0
+      children [
+        Transform {
+          translation 0 0 0.015
+          rotation 1 0 0 1.57
+          children [
+            Shape {
+              appearance PBRAppearance {
+                roughness 1
+                metalness 0
+              }
+              geometry Cylinder {
+                height 0.01
+                radius 0.005
+              }
+            }
+          ]
+        }
+      ]
+      fieldOfView 1.05
+      width 80
+      height 60
+      antiAliasing TRUE
+      noise 0.04
+    }
+    DistanceSensor {
+      translation -8.3289e-10 0.00300013 -0.066992
+      rotation 0 1 0 1.57
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.533333 0.541176 0.521569
+            roughness 1
+            metalness 0
+          }
+          geometry Cylinder {
+            height 0.004
+            radius 0.008
+          }
+        }
+      ]
+      name "ds0"
+      lookupTable [
+        0 1024 0
+        0.05 1024 0
+        0.15 0 0
+      ]
+      numberOfRays 2
+      aperture 1
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 3.527339049898664e-10
+        axis -1 0 0
+        anchor -0.045 -0.025 0.035
+      }
+      device [
+        PositionSensor {
+          name "ds0"
+        }
+        RotationalMotor {
+          name "wheel2"
+          consumptionFactor 70
+        }
+      ]
+      endPoint Solid {
+        translation -0.045 -0.025 0.035
+        rotation -1 0 0 0
+        children [
+          DEF WHEEL Transform {
+            rotation 0 0 1 1.57
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0.203922 0.396078 0.643137
+                  roughness 1
+                  metalness 0
+                }
+                geometry Cylinder {
+                  height 0.01
+                  radius 0.025
+                }
+              }
+            ]
+          }
+        ]
+        name "wheel2"
+        boundingObject USE WHEEL
+        physics DEF PHYSIC_WHEEL Physics {
+          density -1
+          mass 0.05
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position -3.4630034220775963e-10
+        axis -1 0 0
+        anchor 0.045 -0.025 0.035
+      }
+      device [
+        PositionSensor {
+          name "ds1"
+        }
+        RotationalMotor {
+          name "wheel1"
+          consumptionFactor 70
+        }
+      ]
+      endPoint Solid {
+        translation 0.045 -0.025 0.035
+        rotation -1 0 0 0
+        children [
+          DEF WHEEL Transform {
+            rotation 0 0 1 1.57
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0.203922 0.396078 0.643137
+                  roughness 1
+                  metalness 0
+                }
+                geometry Cylinder {
+                  height 0.01
+                  radius 0.025
+                }
+              }
+            ]
+          }
+        ]
+        name "wheel1"
+        boundingObject USE WHEEL
+        physics DEF PHYSIC_WHEEL Physics {
+          density -1
+          mass 0.05
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position -3.291130540053983e-10
+        axis -1 0 0
+        anchor 0.045 -0.025 -0.035
+      }
+      device [
+        PositionSensor {
+          name "ds0"
+        }
+        RotationalMotor {
+          name "wheel3"
+          consumptionFactor 70
+        }
+      ]
+      endPoint Solid {
+        translation 0.045 -0.025 -0.035
+        rotation -1 0 0 0
+        children [
+          DEF WHEEL Transform {
+            rotation 0 0 1 1.57
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0.203922 0.396078 0.643137
+                  roughness 1
+                  metalness 0
+                }
+                geometry Cylinder {
+                  height 0.01
+                  radius 0.025
+                }
+              }
+            ]
+          }
+        ]
+        name "wheel3"
+        boundingObject USE WHEEL
+        physics DEF PHYSIC_WHEEL Physics {
+          density -1
+          mass 0.05
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position -3.27577727140623e-10
+        axis -1 0 0
+        anchor -0.045 -0.025 -0.035
+      }
+      device [
+        PositionSensor {
+          name "ds1"
+        }
+        RotationalMotor {
+          name "wheel4"
+          consumptionFactor 70
+        }
+      ]
+      endPoint Solid {
+        translation -0.045 -0.025 -0.035
+        rotation -1 0 0 0
+        children [
+          DEF WHEEL Transform {
+            rotation 0 0 1 1.57
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0.203922 0.396078 0.643137
+                  roughness 1
+                  metalness 0
+                }
+                geometry Cylinder {
+                  height 0.01
+                  radius 0.025
+                }
+              }
+            ]
+          }
+        ]
+        name "wheel4"
+        boundingObject USE WHEEL
+        physics DEF PHYSIC_WHEEL Physics {
+          density -1
+          mass 0.05
+        }
+      }
+    }
+    Transform {
+      translation 0 -0.01 0
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.771191 0.908095 0.93666
+            roughness 1
+            metalness 0
+          }
+          geometry DEF BODYBOX Box {
+            size 0.09 0.05 0.13
+          }
+        }
+      ]
+    }
+  ]
+  name "ftei cerdas square"
+  boundingObject Transform {
+    translation 0 -0.01 0
+    children [
+      USE BODYBOX
+    ]
+  }
+  physics Physics {
+    density -1
+    mass 0.5
+  }
+  controller "robot_fteicpp"
+}

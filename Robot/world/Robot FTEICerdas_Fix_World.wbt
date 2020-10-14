@@ -1,0 +1,1545 @@
+#VRML_SIM R2019b utf8
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.06198489508028219 -0.7893423188035786 -0.6108163197948105 2.963097805934178
+  position -0.19181915193811327 7.1987422884671535 -1.8045099268219735
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Floor {
+  size 4 6
+  tileSize 0.4 0.4
+}
+DEF WALL Solid {
+  translation -1.9 0.0996076 2.4
+  rotation -0.02280586881592099 0.9996662339690632 -0.012137257089702164 -6.72663706997258e-08
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 0.2 0.2 0.8
+      }
+    }
+  ]
+  name "WALL(47)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+Robot {
+  translation -0.0999978 0.0496797 -1.70996
+  rotation 4.18290705208922e-06 0.9999999112579117 0.0004212679339480081 -3.141585304268881
+  children [
+    Compass {
+    }
+    TinkerbotsBase {
+      translation -2.65355e-08 0.035 0.03
+      rotation 0 1 0 3.14159
+      controller "grab_fteinew"
+      upSlot TinkerbotsDistanceSensor {
+        upSlot TinkerbotsPivot {
+          slot TinkerbotsGrabber {
+            fingerASlot TinkerbotsFinger {
+            }
+            fingerBSlot TinkerbotsFinger {
+            }
+            fingerCSlot TinkerbotsFinger {
+            }
+          }
+        }
+      }
+    }
+    Camera {
+      translation -3e-08 0.035 -0.105
+      rotation 0.1565580220880684 -0.912487128738712 0.37796405332525124 0
+      children [
+        Transform {
+          translation 0 0 0.015
+          rotation 1 0 0 1.57
+          children [
+            Shape {
+              appearance PBRAppearance {
+                roughness 1
+                metalness 0
+              }
+              geometry Cylinder {
+                height 0.01
+                radius 0.005
+              }
+            }
+          ]
+        }
+      ]
+      fieldOfView 1.05
+      width 80
+      height 60
+      antiAliasing TRUE
+      noise 0.04
+    }
+    DistanceSensor {
+      translation -8.3289e-10 0.00300013 -0.066992
+      rotation 0 1 0 1.57
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.533333 0.541176 0.521569
+            roughness 1
+            metalness 0
+          }
+          geometry Cylinder {
+            height 0.004
+            radius 0.008
+          }
+        }
+      ]
+      name "ds0"
+      lookupTable [
+        0 1024 0
+        0.05 1024 0
+        0.15 0 0
+      ]
+      numberOfRays 2
+      aperture 1
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 3.527339049898664e-10
+        axis -1 0 0
+        anchor -0.045 -0.025 0.035
+      }
+      device [
+        PositionSensor {
+          name "ds0"
+        }
+        RotationalMotor {
+          name "wheel2"
+          consumptionFactor 70
+        }
+      ]
+      endPoint Solid {
+        translation -0.045 -0.025 0.035
+        rotation -1 0 0 0
+        children [
+          DEF WHEEL Transform {
+            rotation 0 0 1 1.57
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0.203922 0.396078 0.643137
+                  roughness 1
+                  metalness 0
+                }
+                geometry Cylinder {
+                  height 0.01
+                  radius 0.025
+                }
+              }
+            ]
+          }
+        ]
+        name "wheel2"
+        boundingObject USE WHEEL
+        physics DEF PHYSIC_WHEEL Physics {
+          density -1
+          mass 0.05
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position -3.4630034220775963e-10
+        axis -1 0 0
+        anchor 0.045 -0.025 0.035
+      }
+      device [
+        PositionSensor {
+          name "ds1"
+        }
+        RotationalMotor {
+          name "wheel1"
+          consumptionFactor 70
+        }
+      ]
+      endPoint Solid {
+        translation 0.045 -0.025 0.035
+        rotation -1 0 0 0
+        children [
+          DEF WHEEL Transform {
+            rotation 0 0 1 1.57
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0.203922 0.396078 0.643137
+                  roughness 1
+                  metalness 0
+                }
+                geometry Cylinder {
+                  height 0.01
+                  radius 0.025
+                }
+              }
+            ]
+          }
+        ]
+        name "wheel1"
+        boundingObject USE WHEEL
+        physics DEF PHYSIC_WHEEL Physics {
+          density -1
+          mass 0.05
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position -3.291130540053983e-10
+        axis -1 0 0
+        anchor 0.045 -0.025 -0.035
+      }
+      device [
+        PositionSensor {
+          name "ds0"
+        }
+        RotationalMotor {
+          name "wheel3"
+          consumptionFactor 70
+        }
+      ]
+      endPoint Solid {
+        translation 0.045 -0.025 -0.035
+        rotation -1 0 0 0
+        children [
+          DEF WHEEL Transform {
+            rotation 0 0 1 1.57
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0.203922 0.396078 0.643137
+                  roughness 1
+                  metalness 0
+                }
+                geometry Cylinder {
+                  height 0.01
+                  radius 0.025
+                }
+              }
+            ]
+          }
+        ]
+        name "wheel3"
+        boundingObject USE WHEEL
+        physics DEF PHYSIC_WHEEL Physics {
+          density -1
+          mass 0.05
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position -3.27577727140623e-10
+        axis -1 0 0
+        anchor -0.045 -0.025 -0.035
+      }
+      device [
+        PositionSensor {
+          name "ds1"
+        }
+        RotationalMotor {
+          name "wheel4"
+          consumptionFactor 70
+        }
+      ]
+      endPoint Solid {
+        translation -0.045 -0.025 -0.035
+        rotation -1 0 0 0
+        children [
+          DEF WHEEL Transform {
+            rotation 0 0 1 1.57
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0.203922 0.396078 0.643137
+                  roughness 1
+                  metalness 0
+                }
+                geometry Cylinder {
+                  height 0.01
+                  radius 0.025
+                }
+              }
+            ]
+          }
+        ]
+        name "wheel4"
+        boundingObject USE WHEEL
+        physics DEF PHYSIC_WHEEL Physics {
+          density -1
+          mass 0.05
+        }
+      }
+    }
+    Transform {
+      translation 0 -0.01 0
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.771191 0.908095 0.93666
+            roughness 1
+            metalness 0
+          }
+          geometry DEF BODYBOX Box {
+            size 0.09 0.05 0.13
+          }
+        }
+      ]
+    }
+  ]
+  name "ftei cerdas square"
+  boundingObject Transform {
+    translation 0 -0.01 0
+    children [
+      USE BODYBOX
+    ]
+  }
+  physics Physics {
+    density -1
+    mass 0.5
+  }
+  controller "robot_fteicpp"
+}
+DEF WALL Solid {
+  translation 1.0000000025432003 0.09960760039766159 -1.900000086886677
+  rotation -0.9974534645210624 0.07131956425216521 0.0003253764142096517 6.863818040877655e-07
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 2 0.2 0.2
+      }
+    }
+  ]
+  name "WALL"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation 1.21431e-17 0.0996073 -2.1
+  rotation -0.9974534645210624 0.07131956425216521 0.0003253764142096517 6.863818040877655e-07
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 4 0.2 0.2
+      }
+    }
+  ]
+  name "WALL(40)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation 1.400000002859021 0.09960760010358576 1.9000002851032858
+  rotation 0.0002059635127501168 0.9999999750775421 -8.616232673159606e-05 -3.678542876003915e-07
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 1.2 0.2 0.2
+      }
+    }
+  ]
+  name "WALL(2)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation -0.700000011809492 0.09960760010370504 1.9000002802986837
+  rotation -0.0003711366793921348 0.9999999286564553 7.03182020004583e-05 2.0862422197290846e-07
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 2.6 0.2 0.2
+      }
+    }
+  ]
+  name "WALL(3)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation -1.9000001196532743 0.09960760055670084 -2.3156104408785414e-07
+  rotation -0.0023500535721431774 0.015502682199867446 -0.9998770644898393 -9.66773709337647e-07
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 0.2 0.2 3.6
+      }
+    }
+  ]
+  name "WALL(4)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation -1.0999999983044055 0.09960760035628197 -1.9000001074768325
+  rotation -0.9999807954289867 0.006192227536630426 -0.0002551300562653013 7.735426875029345e-07
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 1.8 0.2 0.2
+      }
+    }
+  ]
+  name "WALL(1)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation -0.7000000001603757 0.09960760006362411 -1.4999999895539917
+  rotation 0.7667184715187446 0.6419834657448131 0.00012305380327983553 5.255369918834309e-08
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 1.8 0.2 0.2
+      }
+    }
+  ]
+  name "WALL(6)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation 1.9000002496359503 0.09960759982035293 -2.674618483082463e-07
+  rotation 0.030629463188106904 0.9982509623854043 0.050565324891894387 6.287137746357168e-08
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 0.2 0.2 3.6
+      }
+    }
+  ]
+  name "WALL(5)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation 0.10000000319511892 0.09960760009540194 -1.7000000042912446
+  rotation 0.9993220221015728 0.03526642070486034 -0.010572403392382194 -4.17641187118854e-08
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 0.2 0.2 0.2
+      }
+    }
+  ]
+  name "WALL(7)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation 0.7000000004235962 0.0996076000759772 -1.4999999917114915
+  rotation 0.35636638667378556 0.934346175572074 0.0004718505153381472 9.23348415412759e-08
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 0.6 0.2 0.2
+      }
+    }
+  ]
+  name "WALL(8)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation 0.9000000019288351 0.09960760010960192 -1.7000000038968928
+  rotation -0.9932729803021947 0.11489530961240128 0.014417157509942727 3.408980801990727e-08
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 0.2 0.2 0.2
+      }
+    }
+  ]
+  name "WALL(9)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation 1.4000000007031057 0.09960760012781734 -1.500000007347811
+  rotation -0.6613852564610714 0.7500460383500501 -0.0006949038190544389 1.3122843333999894e-07
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 0.4 0.2 0.2
+      }
+    }
+  ]
+  name "WALL(10)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation 0.6000000003569904 0.09960760014038172 -1.1000000016852296
+  rotation -0.7943473876809296 0.6074622317689395 -0.0013655250938948166 5.492313557721358e-08
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 1.6 0.2 0.2
+      }
+    }
+  ]
+  name "WALL(12)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation 1.7000000018825077 0.09960760009292584 -1.0999999981174926
+  rotation 0.7071068753571471 5.0314871342825726e-08 -0.7071066870159337 -4.361111396158588e-10
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 0.2 0.2 0.2
+      }
+    }
+  ]
+  name "WALL(11)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation 1.3000000018954045 0.0996076000787402 -1.3000000074938205
+  rotation -0.9939085390172978 0.10956782029103083 0.01186207507871375 6.790456963010717e-08
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 0.2 0.2 0.2
+      }
+    }
+  ]
+  name "WALL(13)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation -0.9999999998275201 0.09960760011745785 -1.1000000037386457
+  rotation -0.674493103284362 0.7382811325357584 0.00015153728566422148 7.009892927840866e-08
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 1.2 0.2 0.2
+      }
+    }
+  ]
+  name "WALL(14)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation -1.4999999981560905 0.09960760006809495 -0.8999999915929812
+  rotation 0.9984241850631992 0.055050790251006294 0.010888396283492082 4.6235719335692085e-08
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 0.2 0.2 0.2
+      }
+    }
+  ]
+  name "WALL(15)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation -1.199999999714418 0.0996076000926363 -0.6999999972259926
+  rotation -0.004091767811416532 0.9999911320792498 0.0009965937175673146 7.607207305665079e-08
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 0.8 0.2 0.2
+      }
+    }
+  ]
+  name "WALL(16)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation -1.2000003101274737 0.09960759935062759 -0.29999999517079756
+  rotation 0.0007907794199502228 0.8593165135193823 -0.5114435494370831 4.961868801192361e-08
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 1.2 0.2 0.2
+      }
+    }
+  ]
+  name "WALL(17)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation -0.49999971621522626 0.09960760010131865 -0.3000000052900344
+  rotation 0.001010943699769547 0.9999978005560053 -0.001837627815413886 -3.053432941903221e-08
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 0.2 0.2 1.4
+      }
+    }
+  ]
+  name "WALL(18)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation -1.19999999825342 0.09960760013503388 0.29999999113589687
+  rotation -0.7870585228901132 0.6168782409150195 -0.00034268297960332106 1.1480199073382791e-07
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 0.8 0.2 0.2
+      }
+    }
+  ]
+  name "WALL(19)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation 0.000100000267097692 0.0996076000926372 0.30000000277294353
+  rotation -6.526886335320254e-05 0.9999999977436239 1.5897420282429204e-05 4.768900405247133e-06
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 0.8 0.2 0.2
+      }
+    }
+  ]
+  name "WALL(20)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation -0.10000010095305828 0.09960760046280244 -0.49999999361811154
+  rotation -0.008792235338774679 0.12754659137294866 -0.9917936093900231 -7.954862489463891e-07
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 0.2 0.2 1
+      }
+    }
+  ]
+  name "WALL(21)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation -1.5000000008690744 0.0996076000503563 0.7000000003790281
+  rotation -0.11001632934798128 0.9938788183065738 -0.010064879449105616 -8.798089415978846e-08
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 0.2 0.2 0.6
+      }
+    }
+  ]
+  name "WALL(22)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation -1.1999999980943716 0.0996076000925693 1.1000000061719957
+  rotation -0.050989033497268604 0.9986987887567736 0.0009207598859839075 8.235401259184188e-08
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 0.8 0.2 0.2
+      }
+    }
+  ]
+  name "WALL(23)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation -1.1999999997083388 0.09960760009358703 1.5000000031587633
+  rotation -0.08355545954860051 0.9965031268007688 -5.878701543209093e-05 6.70036417892622e-08
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 0.8 0.2 0.2
+      }
+    }
+  ]
+  name "WALL(24)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation -0.8999999982159026 0.09960760010763917 1.2999999934980038
+  rotation -0.995457642780167 0.09484393880641469 0.00828907125305489 5.519023935928909e-08
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 0.2 0.2 0.2
+      }
+    }
+  ]
+  name "WALL(25)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation -1.499999998151873 0.09960760007725632 1.7000000100461556
+  rotation 0.9980846126578679 0.06130789587905201 0.00827332330306931 6.300998684061644e-08
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 0.2 0.2 0.2
+      }
+    }
+  ]
+  name "WALL(26)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation -0.09000000116219123 0.09960760012234336 0.6999999996727344
+  rotation -0.6704765587134877 0.7419304944122749 0.0005706810638484601 4.122817900193819e-08
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 2.2 0.2 0.2
+      }
+    }
+  ]
+  name "WALL(27)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation 1.5000000028509006 0.09960760009262397 -0.09999999985801902
+  rotation 0.0009139990416697878 0.9999779689388046 -0.006574666742491068 -4.7362470312946846e-08
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 0.2 0.2 1.4
+      }
+    }
+  ]
+  name "WALL(28)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation 1.29999969403204 0.09960760008554245 0.9000000145995193
+  rotation -0.0028794182582844497 0.9999956577008252 0.0006273196855319518 8.924593362022745e-08
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 1 0.2 0.2
+      }
+    }
+  ]
+  name "WALL(29)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation 1.100000002850901 0.09960760009262395 -0.2999999998580192
+  rotation 0.0009139987195234281 0.9999779689435064 -0.006574666072165503 -4.736247031156833e-08
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 0.2 0.2 1.4
+      }
+    }
+  ]
+  name "WALL(30)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation 0.7000002283819737 0.09960760009616303 -0.1999999992021748
+  rotation -0.0030801023693701533 0.9999739860611209 0.006522282608684696 1.4404599386830178e-08
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 0.2 0.2 1.2
+      }
+    }
+  ]
+  name "WALL(31)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation 0.29999969308926955 0.0996075996464644 -0.09999999397170412
+  rotation -0.0243835758907036 0.7542573836680185 -0.6561259333459224 1.2979370443998186e-07
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 0.6 0.2 0.2
+      }
+    }
+  ]
+  name "WALL(32)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation 0.30000000248910846 0.09960760009269584 -0.5999999993316559
+  rotation 0.0014787789430179845 0.9999943465282985 -0.003019954350467427 -1.0287459934315851e-07
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 0.2 0.2 0.4
+      }
+    }
+  ]
+  name "WALL(33)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation -0.4999999967566244 0.09960760009267201 1.4000000003036719
+  rotation 0.001014809968922546 0.9999908268479308 -0.004161295557669046 -7.45256624209081e-08
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 0.2 0.2 0.8
+      }
+    }
+  ]
+  name "WALL(34)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation 0.5000000041611575 0.09960760009277907 1.3999999989439857
+  rotation 0.001053043361566986 0.9999902079490606 -0.004298267752626893 -7.164324167002654e-08
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 0.2 0.2 0.8
+      }
+    }
+  ]
+  name "WALL(35)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation -0.09000000044395531 0.09960760006325091 1.2000000011456948
+  rotation -0.02280586881592099 0.9996662339690632 -0.012137257089702164 -6.72663706997258e-08
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 0.2 0.2 0.8
+      }
+    }
+  ]
+  name "WALL(36)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation 0.8999999947974464 0.09960760012740376 1.5000000020322428
+  rotation -0.0002534352644684463 0.7454175485025492 -0.6665977903916398 -1.1029911097918594e-07
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 0.2 0.2 0.6
+      }
+    }
+  ]
+  name "WALL(37)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation 1.2000000048013246 0.09960760005799545 1.3000000003651628
+  rotation -0.00850095219300156 0.9806516493266227 -0.1955762676931601 9.119891134487496e-08
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 0.4 0.2 0.2
+      }
+    }
+  ]
+  name "WALL(38)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation 1.3000000018740219 0.09960760009292637 1.5000000018839672
+  rotation -0.7025513403368413 0.11332848335077934 0.7025512572420035 4.389309826744691e-10
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 0.2 0.2 0.2
+      }
+    }
+  ]
+  name "WALL(39)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation -9.79044e-09 0.0996073 -2.3
+  rotation -0.9974534645210624 0.07131956425216521 0.0003253764142096517 6.863818040877655e-07
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 4 0.2 0.2
+      }
+    }
+  ]
+  name "WALL(41)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation -1.95805e-08 0.0996073 -2.5
+  rotation -0.9974534645210624 0.07131956425216521 0.0003253764142096517 6.863818040877655e-07
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 4 0.2 0.2
+      }
+    }
+  ]
+  name "WALL(42)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation -2.93709e-08 0.0996072 -2.7
+  rotation -0.9974534645210624 0.07131956425216521 0.0003253764142096517 6.863818040877655e-07
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 4 0.2 0.2
+      }
+    }
+  ]
+  name "WALL(43)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation -3.91611e-08 0.0996073 -2.9
+  rotation -0.9974534645210624 0.07131956425216521 0.0003253764142096517 6.863818040877655e-07
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 4 0.2 0.2
+      }
+    }
+  ]
+  name "WALL(44)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation -2.1684e-16 0.0996076 2.9
+  rotation -0.0003711366793921348 0.9999999286564553 7.03182020004583e-05 2.0862422197290846e-07
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 4 0.2 0.2
+      }
+    }
+  ]
+  name "WALL(45)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF WALL Solid {
+  translation 1.9 0.0996076 2.4
+  rotation -0.02280586881592099 0.9996662339690632 -0.012137257089702164 -6.72663706997258e-08
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 0.2 0.2 0.8
+      }
+    }
+  ]
+  name "WALL(46)"
+  boundingObject USE WALL
+  physics DEF WALL Physics {
+    mass 1
+  }
+}
+DEF tatakan Solid {
+  translation 0.7 0.0220363 2.57
+  rotation -1 2.664433046112383e-12 -2.255617127896447e-14 -2.4614920431882173e-05
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 1 1 1
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry Box {
+        size 0.1 0.045 0.1
+      }
+    }
+  ]
+  boundingObject Box {
+    size 0.1 0.045 0.1
+  }
+  physics Physics {
+    mass 1
+  }
+}
+DEF bendanya Solid {
+  translation 0.7 0.05703 2.57
+  rotation -0.9999999999999999 6.468596658334459e-12 -3.46224770559729e-11 -2.4626999872880483e-05
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0.125 0.29 0.529
+        }
+        texture ImageTexture {
+        }
+        textureTransform TextureTransform {
+        }
+      }
+      geometry DEF Benda Box {
+        size 0.025 0.025 0.025
+      }
+    }
+  ]
+  name "benda"
+  boundingObject USE Benda
+  physics Physics {
+  }
+}
