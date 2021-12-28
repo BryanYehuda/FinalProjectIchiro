@@ -30,3 +30,8 @@ Membuat sebuah Robot Pathfinding yang bisa menavigasi maze dan mengenali benda d
 4. Reference:
    * [Maze Robot Controller](https://github.com/haoransh/Maze-Robot-on-Webots/tree/master/controllers/maze_controller)
    * [Maze Robot Wold on Webots](https://github.com/haoransh/Maze-Robot-on-Webots/tree/master/worlds)
+
+## LISENSI   
+
+Repository ini memiliki **Lisensi MIT.**      
+Lisensi ini membolehkan pengguna untuk melakukan perubahan apapun pada kode program. Lisensi ini hanya mewajibkan pengguna untuk menyertakan lisensi dan copyright pembuat pada kode yang didistribusikan ulang dan tidak ada larangan untuk menggunakan trademark dari pembuat asli. Selain itu pengguna juga tidak berhak untuk menuntut pembuat ketika terjadi kerusakan pada perangkat lunak tersebut.
