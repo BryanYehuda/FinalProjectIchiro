@@ -13,7 +13,7 @@ Membuat sebuah Robot Pathfinding yang bisa menavigasi maze dan mengenali benda d
 * Mengenali jarak dalam maze menggunakan sensor jarak
 * Pembuatan maze menggunakan solid body dan mass dalam Webots
 
-## LIST TARGET:
+## List Target:
 1. Membuat sebuah world  
 2. Tambahkan robot dan set Maze  
 3. Controller:  
@@ -23,7 +23,7 @@ Membuat sebuah Robot Pathfinding yang bisa menavigasi maze dan mengenali benda d
    * Bagaimana caranya robot bisa membedakan benda dengan dinding
    * Menemukan benda yang dicari
 
-## LANJUTAN
+## Lanjutan
 1. Mapping menggunakan Pathfinding A* dan Rekursi
 2. Melakukan maze mapping sendiri, dan memasukkan step-step berikut kedalam controller
 3. Step-step berikut kemudian di setkan posisinya agar robot bisa menavigasi Maze dengan sempurna
@@ -31,7 +31,7 @@ Membuat sebuah Robot Pathfinding yang bisa menavigasi maze dan mengenali benda d
    * [Maze Robot Controller](https://github.com/haoransh/Maze-Robot-on-Webots/tree/master/controllers/maze_controller)
    * [Maze Robot Wold on Webots](https://github.com/haoransh/Maze-Robot-on-Webots/tree/master/worlds)
 
-## LISENSI   
+## Lisensi  
 
 Repository ini memiliki **Lisensi MIT.**      
 Lisensi ini membolehkan pengguna untuk melakukan perubahan apapun pada kode program. Lisensi ini hanya mewajibkan pengguna untuk menyertakan lisensi dan copyright pembuat pada kode yang didistribusikan ulang dan tidak ada larangan untuk menggunakan trademark dari pembuat asli. Selain itu pengguna juga tidak berhak untuk menuntut pembuat ketika terjadi kerusakan pada perangkat lunak tersebut.
