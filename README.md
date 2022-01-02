@@ -1,6 +1,5 @@
 # Tugas Akhir Ichiro
-Penugasan Ichiro Terakhir oleh Bryan | Daffa | Fiqey      
-Kelompok **FTEICerdas**
+### Penugasan Ichiro Terakhir oleh Bryan | Daffa | Fiqey dari Kelompok **FTEICerdas**
 
 ## Konsep
 Membuat sebuah Robot Pathfinding yang bisa menavigasi maze dan mengenali benda dengan warna yang diinginkan
